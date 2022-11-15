@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico:regular,bold,italic&subset=latin,latin-ext');
+.navbarclase{
+    position: sticky;
+    top: 0;
+    font-family: 'Pacifico', cursive;
+}
