@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Button_Menu from "./Partials/Button_Menu";
 import Button_Reserva from "./Partials/Button_Reserva";
+import Carrusel from "./Partials/Carrusel";
 
 function Home() {
   return (
@@ -29,7 +30,13 @@ function Home() {
             </div>
           </div>
         </div>
+        <p> </p>
+
+        <div className="col-lg-5 imagen mx-auto">
+        <Carrusel/>
+        </div>
       </Container>
+      
     </>
   );
 }

@@ -8,13 +8,13 @@ import "../statics/styles/NavBar.css";
 function NavBar() {
   return (
     <div className="navbarclase">
-
       <Navbar bg="warning" variant="dark">
         <Container>
           <Navbar.Brand src="" to="/Home">
             Image
           </Navbar.Brand>
           <Nav className="me-auto">
+            
             <Nav.Link as={NavLink} to="/Home">
               Home
             </Nav.Link>

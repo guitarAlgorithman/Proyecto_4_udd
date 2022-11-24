@@ -1,8 +1,9 @@
 import React from 'react'
+import Menus from './Partials/Menus'
 
 function Menu() {
   return (
-    <div>Menu</div>
+    <Menus/>
   )
 }
 
