@@ -3,35 +3,23 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ElementoMenu() {
-  let array = [
+function ElementoMenu(props) {
+  let array = []
+  props.comidas.map(x=>{
+    if(x.tipo==props.tipo){
+    array.push(
     {
-      comida: "una comida",
-      descripcion: "algo que se come",
-      precio: 100,
-    },
-    {
-      comida: "una comida 2",
-      descripcion: "algo que se come 2",
-      precio: 100,
-    },
-    {
-      comida: "una comida 3",
-      descripcion: "algo que se come2",
-      precio: 100,
-    },
-    {
-      comida: "una comida",
-      descripcion: "algo que se come",
-      precio: 100,
-    },
-  ];
+      comida:x.nombre,
+      descripcion:x.descripcion,
+      precio:x.precio,
+      imagen:x.imagen
+    })}})
   return (
     <Row xs={1} md={2} className="g-4">
       {array.map((i, idx) => (
-        <Col>
+        <Col key={idx}>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={i.imagen} />
             <Card.Body>
               <Card.Title>{i.comida}</Card.Title>
               <Card.Text>
