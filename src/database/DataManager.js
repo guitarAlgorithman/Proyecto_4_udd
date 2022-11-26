@@ -12,24 +12,21 @@ const readData = async (coleccion) => {
   }
 };
 
-
 const saveData = async (coleccion, data) => {
-    try {
+  try {
+    await addDoc(collection(db, coleccion), {
+      nombre: data.nombre,
+      email: data.email,
+      telefono: data.telefono,
+      comensales: data.comensales,
+      fechaReserva: Timestamp.fromDate(data.fecha),
+      horaRegistro: Timestamp.now(),
+      codigoReserva: data.codigo,
+    });
 
-      await addDoc(collection(db, coleccion),
-      
-        {
-          nombre: data.nombre,
-          email: data.email,
-          telefono: data.telefono,
-          comensales: data.comensales,
-          fechaReserva: Timestamp.fromDate(data.fecha),          
-          horaRegistro: Timestamp.now(),
-          codigoReserva:(Math.random() + 1).toString(36).substring(7),
-        });
-    } catch (error) {
-      console.log("Error escribiendo en la base ", error);
-    }
+  } catch (error) {
+    console.log("Error escribiendo en la base ", error);
   }
-  
-export { readData,saveData }
+};
+
+export { readData, saveData };

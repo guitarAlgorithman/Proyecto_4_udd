@@ -1,8 +1,9 @@
 .back_img{
     background-image: url("../images/background.jpg");
-    background-size:auto;
+    background-size:contain;
     background-repeat:round;
     background-attachment: fixed;
+    height: 10%
 
 
 }
@@ -19,4 +20,13 @@ Body{
     height: 100%;
     object-fit:fill;
     
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }

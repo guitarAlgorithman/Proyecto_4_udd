@@ -1,0 +1,18 @@
+import React from "react";
+import { Container } from "react-bootstrap";
+
+function Instrucciones() {
+  return (
+    <Container className=" bg-warning fluid">
+      <h2>Instrucciones sobre la reserva</h2>
+      <ol>
+        <li>Ingrese su nombre y apellido</li>
+        <li>Ingrese sus datos de contado Email y Teléfono (+56 xxxx xxxx)</li>
+        <li>Ingrese la fecha y hora que asistirá (recuerde llegar idealmente unos 10 minutos antes)</li>
+        <li>Presione reserva y revise su email</li>
+      </ol>
+    </Container>
+  );
+}
+
+export default Instrucciones;

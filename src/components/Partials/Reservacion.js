@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
 import { saveData } from "../../database/DataManager";
+import emailjs from "@emailjs/browser";
 
 const nombre = React.createRef();
 const email = React.createRef();
@@ -10,29 +11,45 @@ const fechaReserva = React.createRef();
 const horaReserva = React.createRef();
 
 function Reservacion() {
-  
+  const form = useRef();
 
   async function handleSubmit(e) {
+    e.preventDefault();
+    let fechaAjustada = new Date(
+      fechaReserva.current.value + " " + horaReserva.current.value
+    );
+    let codigo = (Math.random() + 1).toString(36).substring(7);
 
-    let fechaAjustada=new Date(fechaReserva.current.value+" "+horaReserva.current.value)
-
-    console.log(fechaAjustada);
-
-    let reserva=({
+    let reserva = {
       nombre: nombre.current.value,
       email: email.current.value,
       telefono: telefono.current.value,
       comensales: comensales.current.value,
       fecha: fechaAjustada,
-    });
-    await saveData("reservas", reserva).then(
-      
-    )
-    .catch((e) => {
-      console.log(e);
-    });
-    console.log(reserva);
-    e.preventDefault();
+      codigo: codigo,
+    };
+    emailjs.init("8FBVW-xfYDvAPkBul")
+    emailjs
+      .send("service_ari3tzm", "template_j9raikm",{
+        from_name: "gustavo.henriquez.m@gmail.com",
+        to_name: nombre.current.value,
+        message: `Su reserva tiene codigo: ${codigo}`,
+        reply_to: email.current.value,
+      })
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    await saveData("reservas", reserva)
+      .then()
+      .catch((e) => {
+        console.log(e);
+      });
   }
 
   return (
@@ -40,7 +57,7 @@ function Reservacion() {
       <header>
         <h3>Reserve su mesa</h3>
       </header>
-      <div className="m-5">
+      <form className="m-5" ref={form}>
         <div className="row mx-auto">
           <div className="col-lg-4">
             <label for="" className="form-label">
@@ -100,7 +117,7 @@ function Reservacion() {
             </div>
           </div>
         </div>
-      </div>
+      </form>
       <button className="btn btn-primary mb-3" onClick={handleSubmit}>
         Reservar
       </button>

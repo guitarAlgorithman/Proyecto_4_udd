@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function Carrusel() {
   return (
-    <Carousel className='mx-auto '>
+    <Carousel className='mx-auto col-lg-6'>
     <Carousel.Item interval={2000}>
       <img
         className="d-block align-items-center imagen"

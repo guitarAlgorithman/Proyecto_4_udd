@@ -1,20 +1,23 @@
-import React from 'react'
-import { Row } from 'react-bootstrap'
-import CheckReserva from './Partials/CheckReserva'
-import Reservacion from './Partials/Reservacion'
+import React from "react";
+import { Row } from "react-bootstrap";
+import Instrucciones from "./Partials/Instrucciones";
+import Reservacion from "./Partials/Reservacion";
 
 function Reserva() {
   return (
     <div>
-      <Row>
-      <Reservacion/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Row className="mx-auto mb-5 col-lg-7">
+        <Instrucciones className="m-5"/>
       </Row>
       <Row>
-      <CheckReserva/>
+        <Reservacion />
       </Row>
-    </div>
 
-  )
+    </div>
+  );
 }
 
-export default Reserva
+export default Reserva;
