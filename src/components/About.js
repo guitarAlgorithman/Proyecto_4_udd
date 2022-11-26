@@ -4,11 +4,12 @@ import Ubicacion from "./Partials/Ubicacion";
 
 function About() {
   return (
-    <Container>
+    <Container >
       <h1 className="text-center">Sobre nosotros</h1>
       <hr />
       <Row>
-      <div className="mt-5  text-justify col-lg-6">
+        
+      <div className="mt-5  text-justify col-lg-6 bg-warning">
         
         <Row className="m-2">
         <h2>¿Quienes Somos?</h2>
@@ -21,16 +22,20 @@ function About() {
       </div>
       <p className="mt-5  text-justify col-lg-6">
         <h2>¿Donde encontranos?</h2>
-        <p>Niteroi 3244, Conchalí, Santiago, Chile</p>
+        <p className="bg-warning ">Niteroi 3244, Conchalí, Santiago, Chile</p>
       </p>
-      </Row>
-      <Row>
-        <h3>Nuestro local:</h3>
       </Row>
       <Row>
         <Ubicacion/>
       </Row>
-      
+      <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     </Container>
   );
 }

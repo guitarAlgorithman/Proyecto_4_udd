@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Routes, Route } from "react-router-dom";
 
 
 import Container from "react-bootstrap/Container";
@@ -36,6 +35,9 @@ function Home() {
         <Carrusel/>
         </div>
       </Container>
+      <br></br>
+      <br></br>
+      <br></br>
       
     </>
   );

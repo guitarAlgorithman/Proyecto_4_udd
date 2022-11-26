@@ -118,7 +118,7 @@ function Reservacion() {
           </div>
         </div>
       </form>
-      <button className="btn btn-primary mb-3" onClick={handleSubmit}>
+      <button className="btn btn-primary mb-5" onClick={handleSubmit}>
         Reservar
       </button>
     </Container>

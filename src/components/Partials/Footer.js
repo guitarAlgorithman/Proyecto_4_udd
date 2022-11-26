@@ -10,10 +10,10 @@ function Footer() {
         <div className='col-4 my-auto'>
           Restaurant Perito
         </div>
-        <div className='col-lg-4'>
+        <div className='col-4'>
           Proyecto 4 UDD - 2022
         </div>
-        <div className='col-lg-4'>
+        <div className='col-4'>
         <CDBBox display="flex align-context-center">
         <CDBBtn flat color="dark" className="p-2">
             <CDBIcon fab icon="facebook-f" />

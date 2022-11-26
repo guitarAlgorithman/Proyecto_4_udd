@@ -11,7 +11,7 @@ function NavBar() {
       <Navbar bg="warning" variant="dark">
         <Container>
           <Navbar.Brand src="" to="/Home">
-            Image
+            
           </Navbar.Brand>
           <Nav className="me-auto">
             
