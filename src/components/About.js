@@ -25,6 +25,7 @@ function About() {
         <p className="bg-warning ">Niteroi 3244, Conchalí, Santiago, Chile</p>
       </p>
       </Row>
+      
       <Row>
         <Ubicacion/>
       </Row>
