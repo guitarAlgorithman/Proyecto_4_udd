@@ -4,7 +4,7 @@ import '../statics/styles/Footer.css'
 
 function Footer() {
   return (
-    <div className='footer  ' bg="warning" variant="dark">
+    <div className='footer '>
         Footer</div>
   )
 }

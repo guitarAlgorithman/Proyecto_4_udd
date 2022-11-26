@@ -32,19 +32,19 @@ function Menus() {
         <Accordion.Item eventKey="1">
           <Accordion.Header>Bebidas y licores</Accordion.Header>
           <Accordion.Body>
-            
+            <ElementoMenu tipo="Bebestibles" comidas={comidasMenu}/>
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">
           <Accordion.Header>Comida Italiana - Pastas y otros</Accordion.Header>
           <Accordion.Body>
-            
+            <ElementoMenu tipo="Comidas" comidas={comidasMenu}/>
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="3">
           <Accordion.Header>Postres</Accordion.Header>
           <Accordion.Body>
-            
+            <ElementoMenu tipo="Postres" comidas={comidasMenu}/>
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

@@ -1,7 +1,40 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { saveData } from "../../database/DataManager";
+
+const nombre = React.createRef();
+const email = React.createRef();
+const telefono = React.createRef();
+const comensales = React.createRef();
+const fechaReserva = React.createRef();
+const horaReserva = React.createRef();
 
 function Reservacion() {
+  
+
+  async function handleSubmit(e) {
+
+    let fechaAjustada=new Date(fechaReserva.current.value+" "+horaReserva.current.value)
+
+    console.log(fechaAjustada);
+
+    let reserva=({
+      nombre: nombre.current.value,
+      email: email.current.value,
+      telefono: telefono.current.value,
+      comensales: comensales.current.value,
+      fecha: fechaAjustada,
+    });
+    await saveData("reservas", reserva).then(
+      
+    )
+    .catch((e) => {
+      console.log(e);
+    });
+    console.log(reserva);
+    e.preventDefault();
+  }
+
   return (
     <Container>
       <header>
@@ -13,21 +46,21 @@ function Reservacion() {
             <label for="" className="form-label">
               Nombre
             </label>
-            <input type="text" className="form-control" name="" id=""></input>
+            <input type="text" className="form-control" ref={nombre}></input>
           </div>
 
           <div className="col-lg-4">
             <label for="" className="form-label">
               Email
             </label>
-            <input type="email" className="form-control" name="" id=""></input>
+            <input type="email" className="form-control" ref={email}></input>
           </div>
 
           <div className="col-lg-4">
             <label for="" className="form-label">
               Teléfono
             </label>
-            <input type="phone" className="form-control" name="" id=""></input>
+            <input type="phone" className="form-control" ref={telefono}></input>
           </div>
         </div>
         <div className="m-5">
@@ -36,15 +69,11 @@ function Reservacion() {
               <label for="" className="form-label">
                 Número de comensales
               </label>
-              
-              
+
               <input
                 type="number"
                 className="form-control"
-                name=""
-                id=""
-                aria-describedby="helpId"
-                placeholder=""
+                ref={comensales}
               ></input>
             </div>
 
@@ -55,10 +84,7 @@ function Reservacion() {
               <input
                 type="date"
                 className="form-control"
-                name=""
-                id=""
-                aria-describedby="helpId"
-                placeholder=""
+                ref={fechaReserva}
               ></input>
             </div>
 
@@ -69,16 +95,15 @@ function Reservacion() {
               <input
                 type="time"
                 className="form-control"
-                name=""
-                id=""
-                aria-describedby="helpId"
-                placeholder=""
+                ref={horaReserva}
               ></input>
             </div>
-        </div>
+          </div>
         </div>
       </div>
-      <button className="btn btn-primary mb-3">Reservar</button>
+      <button className="btn btn-primary mb-3" onClick={handleSubmit}>
+        Reservar
+      </button>
     </Container>
   );
 }

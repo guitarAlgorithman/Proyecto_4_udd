@@ -1,7 +1,7 @@
 .back_img{
     background-image: url("../images/background.jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
+    background-size:auto;
+    background-repeat:round;
     background-attachment: fixed;
 
 
