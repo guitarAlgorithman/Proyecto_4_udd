@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
-import { Container } from "react-bootstrap";
+import React from "react";
+import { Container} from "react-bootstrap";
 import { saveData } from "../../database/DataManager";
 import emailjs from "@emailjs/browser";
+
+
 
 const nombre = React.createRef();
 const email = React.createRef();
@@ -10,11 +12,14 @@ const comensales = React.createRef();
 const fechaReserva = React.createRef();
 const horaReserva = React.createRef();
 
+
 function Reservacion() {
-  const form = useRef();
+
 
   async function handleSubmit(e) {
-    e.preventDefault();
+
+    e.preventDefault()
+
     let fechaAjustada = new Date(
       fechaReserva.current.value + " " + horaReserva.current.value
     );
@@ -28,28 +33,43 @@ function Reservacion() {
       fecha: fechaAjustada,
       codigo: codigo,
     };
-    emailjs.init("8FBVW-xfYDvAPkBul")
-    emailjs
-      .send("service_ari3tzm", "template_j9raikm",{
-        from_name: "gustavo.henriquez.m@gmail.com",
-        to_name: nombre.current.value,
-        message: `Su reserva tiene codigo: ${codigo}`,
-        reply_to: email.current.value,
-      })
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
 
-    await saveData("reservas", reserva)
-      .then()
-      .catch((e) => {
-        console.log(e);
-      });
+    if (
+      reserva.nombre === "" ||
+      reserva.email === "" ||
+      reserva.telefono === "" ||
+      reserva.comensales < 1
+    ) {
+
+      alert("Favor ingrese todos los datos")
+
+    } else {
+      emailjs.init("8FBVW-xfYDvAPkBul");
+      emailjs
+        .send("service_ari3tzm", "template_j9raikm", {
+          from_name: "gustavo.henriquez.m@gmail.com",
+          to_name: nombre.current.value,
+          message: `Su reserva tiene codigo: ${codigo}`,
+          reply_to: email.current.value,
+        })
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      await saveData("reservas", reserva)
+        .then()
+        .catch((e) => {
+          console.log(e);
+        });
+
+        alert("Reserva efectuadad")
+        e.target.reset();
+    }
   }
 
   return (
@@ -57,7 +77,7 @@ function Reservacion() {
       <header>
         <h3>Reserve su mesa</h3>
       </header>
-      <form className="m-5" ref={form}>
+      <form className="m-5"  onSubmit={handleSubmit}>
         <div className="row mx-auto">
           <div className="col-lg-4">
             <label for="" className="form-label">
@@ -117,10 +137,11 @@ function Reservacion() {
             </div>
           </div>
         </div>
-      </form>
-      <button className="btn btn-primary mb-5" onClick={handleSubmit}>
+        <button className="btn btn-primary mb-5" type="submit">
         Reservar
       </button>
+      </form>
+
     </Container>
   );
 }

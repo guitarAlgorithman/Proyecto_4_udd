@@ -3,10 +3,10 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ElementoMenu(props) {
+const ElementoMenu=(props)=> {
   let array = []
   props.comidas.map(x=>{
-    if(x.tipo==props.tipo){
+    if(x.tipo===props.tipo){
     array.push(
     {
       comida:x.nombre,

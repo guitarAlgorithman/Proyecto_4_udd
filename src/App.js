@@ -7,7 +7,6 @@ import Home from "./components/Home";
 import Menu from "./components/Menu";
 import Reserva from "./components/Reserva";
 import About from "./components/About";
-import NavBar from "./components/Partials/NavBar";
 import Layout from "./components/Layout";
 
 function App() {

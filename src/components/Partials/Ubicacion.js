@@ -17,6 +17,7 @@ function Ubicacion() {
           allowFullScreen=""
           aria-hidden="false"
           tabIndex="0"
+          title="mapa"
         />
       </div>
     </div>
