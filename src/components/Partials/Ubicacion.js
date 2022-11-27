@@ -5,7 +5,7 @@ function Ubicacion() {
   return (
     <div>
       <Row>
-        <h3>Nuestro local:</h3>
+        <h3>Nuestra ubicación:</h3>
       </Row>
       <div className="embed-responsive embed-responsive-4by3 m-5">
         <iframe
