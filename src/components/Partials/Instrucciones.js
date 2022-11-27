@@ -7,9 +7,9 @@ function Instrucciones() {
       <h2>Instrucciones sobre la reserva</h2>
       <ol>
         <li>Ingrese su nombre y apellido</li>
-        <li>Ingrese sus datos de contado Email y Teléfono (+56 xxxx xxxx)</li>
+        <li>Ingrese sus datos de contacto, en este caso su Email y Teléfono (+56 xxxx xxxx)</li>
         <li>Ingrese la fecha y hora que asistirá (recuerde llegar idealmente unos 10 minutos antes)</li>
-        <li>Presione reserva y revise su email</li>
+        <li>Presione reserva y revise su email con su código de reserva</li>
       </ol>
     </Container>
   );
