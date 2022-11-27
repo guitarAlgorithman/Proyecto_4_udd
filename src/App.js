@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import Home from "./components/Home";
@@ -20,6 +20,8 @@ function App() {
             <Route path="Menu" element={<Menu />} />
             <Route path="Reserva" element={<Reserva />} />
             <Route path="About" element={<About />} />
+            <Route path="*" element={<Navigate to={'/'} />}
+      />
           </Route>
         </Routes>
       </BrowserRouter>
