@@ -41,7 +41,7 @@ function Reservacion() {
       reserva.comensales < 1
     ) {
 
-      alert("Favor ingrese todos los datos")
+      alert("Favor ingrese todos los datos solicitados.")
 
     } else {
       emailjs.init("8FBVW-xfYDvAPkBul");
@@ -67,7 +67,7 @@ function Reservacion() {
           console.log(e);
         });
 
-        alert("Reserva efectuadad")
+        alert("Reserva lista, favor revise su correo.")
         e.target.reset();
     }
   }
