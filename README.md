@@ -2,7 +2,7 @@
 
 El siguiente proyecto considera la construcción de una página de restaurante italiano utilizando React y FireBase.
 
-## Layour simple
+## Layout simple
 
 Considera 4 páginas, un Home, un Menu, una de reservas y otra de sobre nosotros.
 Ademas el esquema simple es NavBar -> Body -> Footer
