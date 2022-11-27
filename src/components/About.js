@@ -20,10 +20,10 @@ function About() {
         </Row>
 
       </div>
-      <p className="mt-5  text-justify col-lg-6">
+      <div className="mt-5  text-justify col-lg-6">
         <h2>¿Donde encontranos?</h2>
         <p className="bg-warning ">Niteroi 3244, Conchalí, Santiago, Chile</p>
-      </p>
+      </div>
       </Row>
       
       <Row>

@@ -80,21 +80,21 @@ function Reservacion() {
       <form className="m-5"  onSubmit={handleSubmit}>
         <div className="row mx-auto">
           <div className="col-lg-4">
-            <label for="" className="form-label">
+            <label  className="form-label">
               Nombre
             </label>
             <input type="text" className="form-control" ref={nombre}></input>
           </div>
 
           <div className="col-lg-4">
-            <label for="" className="form-label">
+            <label  className="form-label">
               Email
             </label>
             <input type="email" className="form-control" ref={email}></input>
           </div>
 
           <div className="col-lg-4">
-            <label for="" className="form-label">
+            <label className="form-label">
               Teléfono
             </label>
             <input type="phone" className="form-control" ref={telefono}></input>
@@ -103,7 +103,7 @@ function Reservacion() {
         <div className="m-5">
           <div className="row mx-auto">
             <div className="col-lg-4">
-              <label for="" className="form-label">
+              <label  className="form-label">
                 Número de comensales
               </label>
 
@@ -115,7 +115,7 @@ function Reservacion() {
             </div>
 
             <div className="col-lg-4">
-              <label for="" className="form-label">
+              <label  className="form-label">
                 Fecha de reserva
               </label>
               <input
@@ -126,7 +126,7 @@ function Reservacion() {
             </div>
 
             <div className="col-lg-4">
-              <label for="" className="form-label">
+              <label  className="form-label">
                 Hora de llegada
               </label>
               <input
