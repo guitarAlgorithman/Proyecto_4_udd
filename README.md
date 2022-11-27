@@ -19,3 +19,6 @@ Acordeon de Bootstrap que lleva al menu cargado desde Firebase.
 
 Sistema de reservas en base a un formulario, envía un correo cuando la reserva es efectiva y se guarda en firebase.
 
+
+## Link a la página
+Click [aca](https://jocular-longma-6fa945.netlify.app/)
